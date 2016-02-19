@@ -1,3 +1,6 @@
 # SimpleGroovyApp
 
-This is a very simple Groovy-Android project. It can be used as template.
+It is a simple android project, it contains:
+- Groovy
+- Swisskife
+- and Dagger 2
