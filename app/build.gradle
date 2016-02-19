@@ -1,13 +1,23 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.getkeepsafe.dexcount:dexcount-gradle-plugin:0.4.2'
+        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+    }
+}
+
+
 apply plugin: 'com.android.application'
+apply plugin: 'com.getkeepsafe.dexcount'
 apply plugin: 'groovyx.grooid.groovy-android'
+apply plugin: 'com.neenbedankt.android-apt'
 
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
-
-    sourceSets {
-        main.java.srcDirs += 'src/main/groovy'
-    }
 
     defaultConfig {
         applicationId "demo.simplegroovyapp"
@@ -49,4 +59,9 @@ dependencies {
 
     compile 'org.codehaus.groovy:groovy:2.4.5:grooid'
     compile "com.arasthel:swissknife:1.4.0"
+
+    // dagger
+    apt 'com.google.dagger:dagger-compiler:2.0.2'
+    compile 'com.google.dagger:dagger:2.0.2'
+    provided 'org.glassfish:javax.annotation:10.0-b28'
 }
